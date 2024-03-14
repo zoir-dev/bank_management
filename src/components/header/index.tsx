@@ -5,9 +5,9 @@ import { useTranslation } from 'react-i18next'
 import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { LogOut } from 'lucide-react'
 const Header = () => {
-    const defaultTheme = JSON.parse(localStorage.getItem('theme') || `${window.matchMedia &&
+    const defaultTheme = (localStorage.getItem('theme') || `${window.matchMedia &&
         window.matchMedia("(prefers-color-scheme: dark)").matches
-        }`)
+        }`) === 'true' ? true : false
     const [theme, setTheme] = useState(defaultTheme)
     const [lang, setLang] = useState('')
 
@@ -16,7 +16,7 @@ const Header = () => {
     const navigate = useNavigate()
 
     const changeTheme = (val: boolean) => {
-        localStorage.setItem("theme", JSON.stringify(val));
+        localStorage.setItem("theme", `${val}`);
         setTheme(val);
         val
             ? document.body.classList.add('dark')
@@ -34,7 +34,7 @@ const Header = () => {
     }, [defaultTheme])
 
     useEffect(() => {
-        setLang(JSON.parse(localStorage.getItem('lang') || 'uz'))
+        setLang(localStorage.getItem('lang') === 'uz' ? 'uz' : 'ru')
         i18n.changeLanguage(lang)
     }, [lang, i18n])
 

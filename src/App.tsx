@@ -4,12 +4,12 @@ import { useEffect } from "react";
 import Home from "./pages/home";
 import Monitoring from "./pages/monitoring";
 function App() {
-  const defaultTheme = JSON.parse(localStorage.getItem('theme') ?? `${window.matchMedia &&
+  const defaultTheme = (localStorage.getItem('theme') ?? `${window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches
-    }`)
+    }`) === 'true' ? true : false
 
   const changeTheme = (val: boolean) => {
-    localStorage.setItem("theme", JSON.stringify(val));
+    localStorage.setItem("theme", `${val}`);
     val
       ? document.body.classList.add('dark')
       : document.body.classList.remove('dark')
