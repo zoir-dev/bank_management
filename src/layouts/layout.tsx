@@ -22,7 +22,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
                 </div>
             </div>
             <Header />
-            <div className="h-full bg-[#edefff] dark:bg-background px-3 sm:px-5">
+            <div className="h-full bg-[#edefff] dark:bg-background px-3 z-20 sm:px-5">
                 {children}
             </div>
 
