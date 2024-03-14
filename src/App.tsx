@@ -4,11 +4,12 @@ import { useEffect } from "react";
 import Home from "./pages/home";
 import Monitoring from "./pages/monitoring";
 function App() {
-  const defaultTheme = localStorage.getItem('theme') ?? `${window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches}`
+  const defaultTheme = JSON.parse(localStorage.getItem('theme') ?? `${window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+    }`)
 
-  const changeTheme = (val: string) => {
-    localStorage.setItem("theme", val);
+  const changeTheme = (val: boolean) => {
+    localStorage.setItem("theme", JSON.stringify(val));
     val
       ? document.body.classList.add('dark')
       : document.body.classList.remove('dark')
@@ -18,6 +19,8 @@ function App() {
     changeTheme(defaultTheme)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  console.log(defaultTheme)
 
   return (
     <div className="bg-background text-foreground">

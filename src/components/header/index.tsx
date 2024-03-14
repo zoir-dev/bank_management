@@ -16,7 +16,7 @@ const Header = () => {
     const navigate = useNavigate()
 
     const changeTheme = (val: boolean) => {
-        localStorage.setItem("theme", `${val}`);
+        localStorage.setItem("theme", JSON.stringify(val));
         setTheme(val);
         val
             ? document.body.classList.add('dark')
