@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import Home from "./pages/home";
 import Monitoring from "./pages/monitoring";
 function App() {
-  const defaultTheme = JSON.parse(localStorage.getItem('theme') || `${window.matchMedia &&
+  const defaultTheme = JSON.parse(localStorage.getItem('theme') ?? `${window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches
     }`)
 
