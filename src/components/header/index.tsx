@@ -1,6 +1,6 @@
 import { ChangeEvent, useEffect, useState } from 'react'
 import ThemeSwitch from '../../ui/themeSwitch'
-import { Select, SelectItem } from '@nextui-org/react'
+import {  Select, SelectItem } from '@nextui-org/react'
 import { useTranslation } from 'react-i18next'
 import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { LogOut } from 'lucide-react'
@@ -45,7 +45,7 @@ const Header = () => {
 
     return (
         <header className='px-3 sm:px-5 py-2 sm:py-3  flex items-center gap-3 justify-between z-20'>
-            <h3 className='text-xl font-semibold hidden sm:flex'>Logo</h3>
+            <img src='/Otp_bank_Logo.svg' className='hidden sm:flex w-16 lg:w-20'/>
             <div className='gap-3 sm:gap-5 hidden sm:flex'>
                 {location.pathname !== '/auth' && links.map((l: Linkk) => (
                     <NavLink to={l.href} key={l.href} className={({ isActive }) => `hover:opacity-75 active:opacity-50 duration-300 transition-opacity ${isActive && 'text-success'}`}>
