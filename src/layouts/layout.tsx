@@ -10,7 +10,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         if (!localStorage.getItem('token')) {
             navigate('/auth')
         } else if (localStorage.getItem('token') && location.pathname === '/auth') {
-            // navigate('/')
+            navigate('/')
         }
     }, [location.pathname, navigate])
 

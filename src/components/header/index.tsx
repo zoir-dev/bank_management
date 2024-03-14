@@ -26,7 +26,12 @@ const Header = () => {
     const changeLang = (e: ChangeEvent<HTMLSelectElement>) => {
         i18n.changeLanguage(`${e.target.value}`)
         setLang(e.target.value)
-        localStorage.setItem('lang', JSON.stringify(e.target.value))
+        localStorage.setItem('lang', `${e.target.value}`)
+    }
+
+    const logOut = () => {
+        localStorage.removeItem('token')
+        navigate('/auth')
     }
 
     useEffect(() => {
@@ -65,7 +70,7 @@ const Header = () => {
                     </SelectItem>
                 </Select>
                 <ThemeSwitch value={theme} onChange={changeTheme} />
-                < LogOut className="text-success w-5 sm:w-6 font-bold !aspect-square p-1 px-2 sm:p-2 bg-content1 cursor-pointer rounded-full box-content" />
+                <LogOut className="text-success w-5 sm:w-6 font-bold !aspect-square p-1 px-2 sm:p-2 bg-content1 cursor-pointer rounded-full box-content" onClick={logOut} />
             </div>
         </header>
     )
