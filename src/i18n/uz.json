@@ -5,5 +5,15 @@
 
   "Database": "Ma'lumotlar bazasi",
   "Monitoring": "Monitoring",
-  "test": "Uz"
+  "test": "Uz",
+
+  "Name": "Nomi",
+  "Count": "Sanog'i",
+  "Search": "Qidirish",
+  "Add": "Qo'shish",
+  "Save": "Saqlash",
+  "Cancel": "Bekor qilish",
+  "Edit": "Tahrirlash",
+
+  "Using from": "Ishlatilinayotgani "
 }

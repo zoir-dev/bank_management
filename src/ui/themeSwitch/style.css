@@ -33,7 +33,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #edefff;
+  background-color: hsl(var(--nextui-content2));
   transition: 0.5s;
   border-radius: 30px;
 }
@@ -53,12 +53,12 @@
 
 .checkbox-wrapper-54 input:checked + .slider,
 .slider::before {
-  background-color: hsl(var(--nextui-content1));
+  background-color: hsl(var(--nextui-content2));
 }
 
 .checkbox-wrapper-54 input:checked + .slider:before {
   left: calc(100% - (var(--size-of-icon, 1.4em) + var(--slider-offset, 0.3em)));
-  background: hsl(var(--nextui-content1));
+  background: hsl(var(--nextui-content2));
   box-shadow: inset -3px -2px 5px -2px hsl(var(--nextui-success)),
     inset -10px -4px 0 0 hsl(var(--nextui-success));
 }
